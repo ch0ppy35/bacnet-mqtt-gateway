@@ -1,20 +1,30 @@
 {
-    "device": {
-        "deviceId": 114,
-        "address": "192.168.1.101"
-    },
-    "polling": {
-        "schedule": "*/3 * * * * *"
-    },
-    "objects": [{
-        "objectId": {
-            "type": 2,
-            "instance": 202
-        }
-    }, {
-        "objectId": {
-            "type": 2,
-            "instance": 203
-        }
-    }]
+	"device": {
+		"deviceId": 2749,
+		"address": "10.0.0.10"
+	},
+	"polling": {
+		"schedule": "*/3 * * * * *"
+	},
+	"objects": [{
+		"objectId": {
+			"type": 0,
+			"instance": 1
+		}
+	}, {
+		"objectId": {
+			"type": 0,
+			"instance": 2
+		}
+	}, {
+		"objectId": {
+			"type": 3,
+			"instance": 3
+		}
+	}, {
+		"objectId": {
+			"type": 3,
+			"instance": 4
+		}
+	}]
 }

@@ -26,6 +26,13 @@ class Server {
         this.app.listen(port, () => {
             logger.log('info', `Gateway server listening on port ${port}`);
         });
+
+        // Handle SIGINT exit
+        process.stdin.resume();
+        process.on('SIGINT', function () {
+            console.log('Interrupted');
+            process.exit();
+        });
     }
 
     _scanForDevices(req, res) {

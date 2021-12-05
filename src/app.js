@@ -8,20 +8,20 @@ const config = require('config');
 const httpServerEnabled = config.get('httpServer.enabled');
 
 // init MQTT and BACnet clients
-const mqttClient = new MqttClient();
+// const mqttClient = new MqttClient();
 const bacnetClient = new BacnetClient();
 
 // called when device has been found
 bacnetClient.on('deviceFound', (device) => {
     logger.log('info', `Device found: ${device.address}`);
-    mqttClient.publishMessage(device);
+   // mqttClient.publishMessage(device);
 });
 
 // called when values are polled
 bacnetClient.on('values', (device, values) => {
-    logger.log('info', `Sending actuals for device ${device.address} to IoT Hub`);
-
-    mqttClient.publishMessage(values);
+    //logger.log('info', `Sending actuals for device ${device.address} to IoT Hub`);
+    logger.log('info', values)
+    //mqttClient.publishMessage(values);
 });
 
 if (httpServerEnabled) {
