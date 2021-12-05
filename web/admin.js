@@ -24,8 +24,8 @@ Vue.component('device-scan', {
     data() {
         return {
             loading: false,
-            deviceId: null,
-            address: null,
+            deviceId: 2749,
+            address: "10.0.0.10",
             objects: null
         }
     },
