@@ -1,3 +1,4 @@
+var host = window.location.protocol + "//" + window.location.host;
 Vue.component('spinner', {
     template: '#spinner'
 });
@@ -12,7 +13,7 @@ Vue.component('whois', {
     methods: {
         whois() {
             this.loading = true;
-            axios.put('http://localhost:8082/api/bacnet/scan').then(response => {
+            axios.put(`${host}/api/bacnet/scan`).then(response => {
                 this.devices = response.data;
                 this.loading = false;
             });
@@ -32,7 +33,7 @@ Vue.component('device-scan', {
     methods: {
         scanDevice() {
             this.loading = true;
-            axios.put('http://localhost:8082/api/bacnet/' + this.deviceId + '/objects', {
+            axios.put(`${host}/api/bacnet/` + this.deviceId + '/objects', {
                 deviceId: this.deviceId,
                 address: this.address
             }).then(response => {
