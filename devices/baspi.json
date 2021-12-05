@@ -4,7 +4,7 @@
 		"address": "10.0.0.10"
 	},
 	"polling": {
-		"schedule": "*/3 * * * * *"
+		"schedule": "*/5 * * * * *"
 	},
 	"objects": [{
 		"objectId": {
